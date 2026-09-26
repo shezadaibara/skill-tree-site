@@ -1,0 +1,24 @@
+name: Idea or suggestion
+description: A view you'd want, a question you wish the site answered, or anything else.
+title: "[Idea] "
+labels: ["idea"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The site exists to answer "what should I learn next?". Ideas that make that answer
+        clearer or more useful are the most welcome of all.
+
+  - type: textarea
+    id: idea
+    attributes:
+      label: Your idea
+      description: What would you like to see, change or know?
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: What would it help you decide? (optional)
+      description: For example, what to learn next, which role to aim for, or which employer to apply to.

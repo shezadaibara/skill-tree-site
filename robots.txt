@@ -1,0 +1,21 @@
+# Crawl the site; leave the raw data alone.
+#
+# The site republishes short verbatim sentences from 49 employers' job postings,
+# one per skill, so a reader can see who asked for something. Those belong in
+# the page that explains them, not in a search index of their own.
+#
+# NOTE ON WHERE THIS FILE TAKES EFFECT. Crawlers read robots.txt only at the
+# host root. This site is served from a subpath of a github.io user site, so
+# this file is published at /skill-tree-site/robots.txt and is IGNORED. To bind
+# crawlers today the rule has to live in the shezadaibara.github.io repository:
+#
+#     User-agent: *
+#     Disallow: /skill-tree-site/data/
+#
+# This file is kept so the rule travels with the build and takes effect
+# unchanged the moment the site is served from a root — a custom domain, or any
+# host that is not a project page.
+
+User-agent: *
+Allow: /
+Disallow: /data/
