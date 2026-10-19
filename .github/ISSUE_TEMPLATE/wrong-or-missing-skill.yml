@@ -1,0 +1,54 @@
+name: Wrong or missing skill
+description: A skill that shouldn't be on the graph, one that's missing, or two names for the same thing.
+title: "[Skill] "
+labels: ["data: skill"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for checking the data. Every skill on the site cites the sentence it came from,
+        so the more precisely you point at it, the faster it gets fixed.
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What's wrong?
+      options:
+        - A skill is shown that the posting doesn't actually ask for
+        - A skill the posting asks for is missing
+        - Two names are the same skill (e.g. "K8s" and "Kubernetes")
+        - A skill is in the wrong category
+        - Something else
+    validations:
+      required: true
+
+  - type: input
+    id: skill
+    attributes:
+      label: Skill name(s)
+      description: As shown on the site.
+      placeholder: e.g. Stakeholder Management
+    validations:
+      required: true
+
+  - type: input
+    id: where
+    attributes:
+      label: Where did you see it?
+      description: The market view, or a company's graph — and which company.
+      placeholder: e.g. Market view, or Airbus graph
+    validations:
+      required: true
+
+  - type: input
+    id: posting
+    attributes:
+      label: Link to the job posting (optional)
+      description: If you know which posting it came from. The detail panel shows the sentence.
+      placeholder: https://
+
+  - type: textarea
+    id: details
+    attributes:
+      label: What should it be instead?
+      description: Anything that helps — what the posting really asks for, or which name should win.

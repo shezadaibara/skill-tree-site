@@ -1,0 +1,34 @@
+name: Add an employer
+description: Suggest a company whose open jobs should be included.
+title: "[Employer] "
+labels: ["data: employer"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Postings are read only from an employer's **own** careers site, through the public
+        endpoint its careers page already uses. Job boards and aggregators (LinkedIn, Indeed,
+        StepStone and similar) can't be used, so please link the company's own careers page.
+
+  - type: input
+    id: company
+    attributes:
+      label: Company name
+      placeholder: e.g. Zalando
+    validations:
+      required: true
+
+  - type: input
+    id: careers-url
+    attributes:
+      label: Careers page URL
+      description: The page on the company's own site that lists open jobs.
+      placeholder: https://jobs.example.com/
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: Why is it worth adding? (optional)
+      description: For example, it hires a lot in Germany, or for skills the site is thin on.
